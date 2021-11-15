@@ -3,7 +3,9 @@
 #include <emscripten.h>
 #include <emscripten/bind.h>
 #include <emscripten/val.h>
+#include "vendor/entt/entt.hpp"
 #include "main.h"
+#include "scene/Scene.cpp"
 
 EMSCRIPTEN_KEEPALIVE
 int add(int a, int b) {
@@ -119,16 +121,30 @@ GameState updatePosition(GameState gameState) {
     if (gameState.move == Move::RIGHT) {
         gameState.player.moveRight();
     }
+    if (gameState.move == Move::UP_RIGHT) {
+        gameState.player.moveUpRight();
+    }
+    if (gameState.move == Move::UP_LEFT) {
+        gameState.player.moveUpLeft();
+    }
+    if (gameState.move == Move::DOWN_RIGHT) {
+        gameState.player.moveDownRight();
+    }
+    if (gameState.move == Move::DOWN_LEFT) {
+        gameState.player.moveDownLeft();
+    }
     return gameState;
 }
 
 int main() {
+    Scene scene;
+    std::cout << "Scene is here: Player: "<< scene.player.Transform.x << " - " << scene.player.Transform.y <<std::endl;
+
     printMeSoldo(1000, false, 2.0f);
-    // DrawMe(800,600, 50, 50);
     CallMe(true);
     // EM_ASM(Loaded());
     Stringolo(65);
-    std::cout << "Hello, World Soldo!" << std::endl;
+    
     return 0;
 }
 
