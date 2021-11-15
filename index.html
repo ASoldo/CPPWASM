@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CPPWASM-Engine</title>
+    <script src="export/game.js"></script>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        var Module = {
+            onRuntimeInitialized: function() {
+                console.log('Module loaded: ', Module);
+                console.log(Module._add(1,2));
+                console.log(Module._sub(1,2));
+                console.log(Module._mul(1,2));
+                console.log(Module._divi(1,2));
+                console.log(Module._mod(1,2));
+                setupGameState();
+                CanvasSetup();
+                requestAnimationFrame(render);
+                // render();
+            }
+        };
+        </script>
+    <script async type="text/javascript" src="export/main.js"></script>
+</body>
+</html>

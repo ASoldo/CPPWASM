@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "docker-compose-yml": "dockerfile",
+        "typeinfo": "cpp",
+        "sstream": "cpp"
+    }
+}
