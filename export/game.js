@@ -21,16 +21,16 @@ function setupGameState() {
     time = Date.now(); 
     window.addEventListener("keydown", function(event) {
         key = Number(event.keyCode);
-        if(key === 37) { // left arrow
+        if(key === 37 || key === 65) { // left arrow
             gameState.move = MOVE.LEFT;
         }
-        if(key === 38) { // up arrow
+        if(key === 38 || key === 87) { // up arrow
             gameState.move = MOVE.UP;
         }
-        if(key === 39) { // right arrow
+        if(key === 39 || key === 68) { // right arrow
             gameState.move = MOVE.RIGHT;
         }
-        if(key === 40) { // down arrow
+        if(key === 40 || key === 83) { // down arrow
             gameState.move = MOVE.DOWN;
         }
         if(key === 37 && key === 38) { // up left arrow
